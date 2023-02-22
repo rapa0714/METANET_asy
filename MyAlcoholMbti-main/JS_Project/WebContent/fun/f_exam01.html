@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	console.log("add():"+add(10,20));//선언적 함수는 위치에 상관없이 호출 가능하다.
+	//console.log("add2()"+add2(100,200));//익명함수는 함수가 위에 있어야 호출가능하다. 위치 중요!
+
+	//선언적 함수
+	function add(a,b){//파라미터에 자료형이 필요없다. 리턴타입 있고없고 그거 적어줄필요없음void
+		let sum = a+b;
+		return sum;
+	}
+	
+	//익명함수:1.함수를 변수에 넣을 수 있다. 
+	let add2=function(a,b){
+		let sum =a+b;
+		return sum;
+	}
+	console.log(typeof add2); //함수 데이터타입을 가지고 있다.
+	
+	var plus=add; //함수 대입 가능=>add함수의 주소값을 plus 변수에 할당 =>plus도 함수가 된다.
+	console.log(typeof plus);
+	console.log(plus(1,2));
+	
+	
+	
+	
+	
+	//2.함수의 파라미터에 함수를 전달할 수 있다.
+	let foot =function(func){
+		if(typeof func == 'function'){ //오류발생 점검
+			func();
+		}
+	}
+	//콜백함수
+	foot(function(){
+		console.log('파라미터에 함수를 호출하는 예제');
+	});
+	
+	let foo2 =function(){
+		return function(){
+			console.log('함수를 리턴하는 예쩨');
+		}
+	}
+	let baz = foo2();
+	baz();
+	foo2()();
+	
+	
+	
+	
+	
+	//함수를 객체에 담을 수 있다.
+	function call(mode){
+		let obj={
+			'plus' : function(left,right){
+				return left+right;
+			},
+			'minus' : function(left,right){
+				return left-right;
+			}
+		};
+		return obj[mode];
+	}
+	var func2 = call('minus');
+	console.log("call(minus)  "+func2(200,50));
+	
+	
+	
+	
+	
+	//배열안에 함수를 넣을 수 있다.
+	var arrays =[
+		function(input){
+			return input+10;
+		},
+		function(input){
+			return input-10;
+		},
+		function(input){
+			return input*10;
+		}
+	];
+	
+	for(let i =0; i<arrays.length; i++){
+		console.log(arrays[i](10));
+	}
+	
+	
+	
+	//콜백함수(함수의 파라미터에 전달되는 함수)
+	function sortDesending(a,b){
+		return b-a;	
+	}	
+	let arr=[10,20,30,40,50];
+	console.log(arr.sort()); //기본:오름차순, sort(함수) 함수: 정렬기준 정의
+	console.log(arr.sort(sortDesending)); //내림차순정렬
+	
+	
+	
+	
+	
+	//즉시실행함수 : 함수의 정의와 동시에 호출되는 함수
+	let re = (function(){
+		return 'ㅈ그시 실행함수 실행 결과';
+	})();
+	console.log(re);
+	//즉시 실행함수에 파라미터 값을 넣고 합을 출력하시오
+	let re1 =(function(a,b){
+		return a+b;
+	})(10,5);
+	console.log(re1);
+			
+	
+	
+</script>
+</head>
+<body>
+ <h1></h1>
+</body>
+</html>

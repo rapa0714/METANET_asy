@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//자바스크립트 객체 
+	//1.사용자 정의 객체
+	//	1)Object 2)리터럴 3)생성자함수(프로토타입)
+	//2.내장 객체
+	//	1)코아객체:string, number, math, calendar, Array
+	//	2)브라우저객체:window, do
+	//	3)DOM 객체:문서내 모든 요소: <div>,<form>,<input>
+	
+	
+	
+	
+	//객체 구현
+	//자바스크립트 객체는 동적으로 프로퍼티를 추가할 수 있다
+	//1.Object 객체 이용 => 동적 프로퍼티 추가/삭제 가능
+	let obj = new Object();
+	obj.name="홍길동";
+	obj.age=30;
+	console.log(obj.name);
+	console.log(obj.age);
+	
+	//함수는 1급 객체이다.
+	function add(a,b){
+		let sum =a+b;
+		return sum;
+	}
+	add.result = add(10,20);
+	console.log(add.result)
+	
+	
+	
+	//2.리터럴 형식 객체 사요 =>1개의 객체를 생성해서 사용하는 경우, 가장 일반적인 내용
+	let obj2={
+			name:"asy",
+			age:100,
+			display:function(){
+				console.log(this.name) //여기서 this는 윈도우 객체가 아니라 리터럴 형식안의 객체를 말한다
+			}
+	};
+	obj2.display();
+	console.log(obj2.age);
+	console.log(obj2["age"]);
+
+	
+	
+	//퀴즈>리터럴 형식으로 빈객체를 생성 후 동적프로퍼티 함수를 추가 후 호출하는 예제를 구현하시오.
+	/* let obj3={
+			function(aa){
+				console.log("aa: "+aa);
+			}
+	};
+	obj3.function(4); */
+	let obj3={};
+	obj3.name="asr";
+	obj3.display=function(){
+		console.log(this.name);
+	}
+	obj3.display();
+	
+	//객체 distructoring디스트럭처링:객체의 프로퍼티를 풀어서 별개의 변수에 저장하는 방식
+	let person={
+			first:'홍',
+			last:'길동'
+	};
+	
+	let{first, last} = person;
+	console.log(first, last);
+	
+	
+	
+	
+	
+	
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+<script type="text/javascript">
+
+	/* let a=4;
+	let b=4;
+	console.log(a==b); //값 비교.true
+	
+	let c ={a:1};
+	let d ={a:1};
+	console.log(c==d); //주소값 비교.false
+	
+	let e=d; //d의 주소값을 e에게 전달
+	console.log(d==e); //주소값비교. 주소값이 같다. true
+	console.log(c==e); //c의 주소값은 받아오지 않음. false
+	
+	d.a =2;
+	console.log(e.a); //2. e는 d의 주소값을 가지고 있다. d의 값이 바뀌었으니 e의 값도 바뀐다.
+	console.log(c.a); //1 */
+	
+	
+	
+	
+	
+	/* 객체의 주소말고 값만 복사
+	let a ={q:1};
+	let b=a;
+	console.log(a===b);//true
+	
+	b.q=3;
+	console.log(a===b);//true
+	
+	let c={...a};
+	console.log(c);
+	console.log(a===c);//false
+	
+	a.q =4;
+	console.log(a);
+	console.log(c); */
+	
+	
+	
+	
+	let a={q:1};
+	let b={...a};
+	console.log(b);
+	console.log(a.q===b.q);
+	console.log(JSON.stringify(a));
+	console.log(JSON.stringify(b));
+	console.log(JSON.stringify(a)===JSON.stringify(b)); //true. json사용. 내용비교
+	
+	let c ={a:1, b:2}; //2개짜리
+	let d ={...c};
+	console.log(JSON.stringify(c)===JSON.stringify(d));//true. 
+	
+	let e = {b:2, a:1};
+	console.log(JSON.stringify(c)===JSON.stringify(e));//falase. 
+	console.log(_.isEqual(c,e)) //true
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

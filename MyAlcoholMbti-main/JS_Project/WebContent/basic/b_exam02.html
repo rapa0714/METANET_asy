@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//JavaScript 자료형
+	
+	//숫자형(number)
+	var intNum =10;
+	var floatNum=3.14;
+	console.log(typeof intNum);
+	console.log(typeof floatNum);
+	
+	//문자형(string)
+	let sinS='single';
+	let doubleS='double';
+	console.log(typeof sinS);
+	console.log(typeof doubleS);
+	
+	//논리형(boolean)
+	let boolVar = true;
+	console.log(typeof boolVar);
+	
+	//undefined
+	let emptyVar;
+	console.log(typeof emptyVar);
+	
+	let nullVar = null;
+	//console.log(typeof nullVar); ->object가 나옴
+
+	//함수(function)->함수가 변수안에 들어갈 수 있다.
+	let fun = function(){
+		
+	};
+	console.log(typeof fun);
+	
+	
+	//형변환
+	intNum ='문자열';
+	console.log(typeof intNum);
+	
+	//문자열 => 정수형 : eval(), Number(), parseInt()
+	/*
+	let num ='100';
+	num = eval(num); 
+	num = Number(num);
+	*/
+	let num ='100안녕';
+	num = parseInt(num); //숫자로 받아올 수 있는 부분 까지만 형변환 해준다
+	let num2 = num +300;
+	console.log(num2);
+	console.log(typeof num2);
+	
+	let num3='400';
+	if(num2 == num3){
+	//값이 같은지 확인할때는 ==
+	//자료형까지 같은지 확인할때는 ===
+		console.log('같다');
+	}else{
+		console.log('다르다');
+	}
+	
+	
+</script>
+</head>
+<body>
+	<h1>어쩌구</h1>
+</body>
+</html>

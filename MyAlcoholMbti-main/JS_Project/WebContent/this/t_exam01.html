@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//일반함수 안에서 this는 window객체
+	var data = 10; //윈도우 객체 전역에 소속
+	
+	function func(){
+		this.data=20; //윈도우 객체 의미
+		data=30;
+		
+		console.log("1. data:" + data);//30
+		console.log("2. this.data:" + this.data);//30
+		console.log("3. window.data:" + window.data);//30
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

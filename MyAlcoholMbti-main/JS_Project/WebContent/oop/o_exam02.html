@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//3.생성자함수를 이용하여 객체를 생성 => 다수의 객체를 생성하기 위해
+	/* function grade(kor, eng, math){
+		this.kor=kor;//생성자함수안에서는 this는 grade 말하는거야~
+		this.eng=eng;
+		this.math=math;
+	}
+	
+	function student(name, grade){
+		this.name =name;
+		this.grade=grade;
+		this.getSum= function(){
+			return this.grade.kor+this.grade.eng+this.grade.math;
+		}
+		this.getAverage = function(){
+			return this.getSum()/3;
+		}
+		this.toString = function(){
+			return this.name +"\t" +this.getSum()+"\t"+this.getAverage();
+		}
+	}
+	
+	var students=[];
+	students.push(new student('안세영', new grade(90,80,70)));
+	students.push(new student('안세원', new grade(100,0,20)));
+	for(let i in students){
+		document.write(students[i].toString()+"<br>");
+	} */
+
+	//prototype
+	/* function student(name, kor, eng, math){
+		this.name =name;
+		this.kor=kor;//생성자함수안에서는 this는 grade 말하는거야~
+		this.eng=eng;
+		this.math=math;
+	}
+	student.prototype ={
+			getSum : function(){
+				 return this.kor+this.eng+this.math;
+			},
+			getAverage:function(){
+				return this.getSum()/3;
+			},
+			toString:function(){
+				return this.name +"\t" +this.getSum()+"\t"+this.getAverage();
+			}
+	}
+	
+	var students=[];
+	students.push(new student('안세영', 90, 80, 70));
+	students.push(new student('안세d', 90, 80, 70));
+	for(let i in students){
+		document.write(students[i].toString()+"<br>");
+	} */
+	
+	
+	//과제>Rectangle 생성자 함수를 만들고 사각형 넓이를 구하여 보자.(prototype : getArea())
+	//생성자 함수를 통해서 객체를 생성하고 해당 함수를 호출해서 사용해 보자.
+		/* function Rectangle(d1,d2){
+			this.d1=d1;
+			this.d2=d2;
+		}
+		Rectangle.prototype.getArea=function(){
+				return this.d1*this.d2;
+		}
+		 var rectangle = new Rectangle(4,5);
+		console.log(rectangle.getArea()); */
+		
+		
+	//상속:클래스기반:ES
+	class Rectangle{
+		constructor(w,h)
+		{
+			this.w =w;
+			this.h=h;
+		}
+		
+		getArea = function(){
+			return this.w*this.h;
+		}
+	}
+		
+	class Square extends Rectangle{
+		constructor(length){
+			super(length, length);
+		}
+	}
+	
+	var square = new Square(10);
+	console.log(square.getArea());
+	
+	
+	
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

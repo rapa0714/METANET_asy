@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="cross.js"></script>
+<script type="text/javascript">
+
+	function doProcess(){
+		let result = document.querySelector("#result");
+		result.innerHTML = "<span>이벤트결과1</span>"
+	}
+	
+	function doProcess2(){
+		alert("이벤트결과");
+	}
+	
+	window.onload=function(){
+		let btn = document.querySelector("#btn");
+		//btn.onclick=doProcess;
+		//btn.onclick=doProcess2;//이렇게 두개를 출력하고 싶으면 안됨. 하나가 뒤집어쓰기 때문에 하나만 출력됨.
+		//btn.onclick=doProcess2; //함수의 주소값이 btn.onclick에 들어감
+		//btn.onclick=doProcess2();//구냥 함수 호출.함수 호출해서 리턴값을 btn.onclick에 저장
+	
+		//이벤트 리스너방식 : 한 버튼에 두개의 함수 모두 출력하고 싶으면 이벤트 리스너 사용
+		//btn.addEventListener('click', doProcess, false);
+		//btn.addEventListener('click', doProcess2, false);
+		
+		cross.Event.addListener(btn,'click', doProcess2, false);
+		cross.Event.addListener(btn,'click', doProcess, false);
+		
+
+	
+
+
+
+
+
+</script>
+</head>
+<body>
+	<input type="button"  value="버튼1" onclick="doProcess()">&nbsp;&nbsp;	
+	<input type="button" id="btn" value="버튼2">
+	<div id="result"></div>
+</body>
+</html>

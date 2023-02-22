@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	let data=10;//window객체가 아.니.다.let으로 선언되었으니까
+	function func(){
+		this.data=20; //윈도우객체
+		data=30;
+		
+		console.log("1. data:" + data);//30
+		console.log("2. this.data:" + this.data);//20
+		console.log("3. window.data:" + window.data);//20
+	}
+	func();
+</script>
+</head>
+<body>
+
+</body>
+</html>
