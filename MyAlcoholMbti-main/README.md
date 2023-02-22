@@ -1,4 +1,4 @@
-# MyAlcoholMbti 너무 잘했따
+# 메타넷 workspace
 
 * Q&A 페이지에 응답 버튼 2개 삽입
 * 응답 버튼에 answer 삽입
@@ -13,7 +13,3 @@
 * Q&A 페이지 질문지 유형 여러가지로 할건가.
 * 모바일에서도 동일한 화면이 보이도록 수정
 * 배경음악
-
-
-
-![image](https://user-images.githubusercontent.com/72649564/167237702-0bf1a2a2-27e4-43cc-b504-75493c4000af.png)
